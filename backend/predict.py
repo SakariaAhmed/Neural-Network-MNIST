@@ -15,13 +15,6 @@ def main():
     y_train = to_categorical(y_train, 10)
     y_test  = to_categorical(y_test, 10)
 
-    ## 3) Build the model
-    #model = Sequential([
-    #    Flatten(input_shape=(28,28)),
-    #    Dense(128, activation='relu'),
-    #    Dense(10, activation='softmax'),
-    #])
-
 
     model = Sequential([
       Reshape((28,28,1), input_shape=(28,28)),
@@ -43,7 +36,7 @@ def main():
         metrics=['accuracy']
     )
 
-    # 5) Train
+    # 5) Training 😀
     model.fit(
         x_train, y_train,
         epochs=100,
@@ -51,11 +44,11 @@ def main():
         validation_split=0.1
     )
 
-    # 6) Save the trained model to HDF5
+    # 6) Save the trained model to folder
     model.save('mnist_model.h5')
     print("✅ Model trained and saved to 'mnist_cnn.h5'")
 
-    # 7) Optional: evaluate on test set
+    # 7) Evaluate on test set ,for checking terminal progress
     loss, acc = model.evaluate(x_test, y_test, verbose=0)
     print(f"Test accuracy: {acc:.4f}")
 
