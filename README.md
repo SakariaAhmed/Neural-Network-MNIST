@@ -63,7 +63,3 @@ En webapplikasjon som lar deg tegne et håndskrevet tall i nettleseren, sender t
 ## Bidra
 
 Enhver form for tilbakemelding eller forbedring er velkommen! Trekkforespørsler (PR) aksepteres gjerne.
-
-## Lisens
-
-MIT © Ditt Navn
